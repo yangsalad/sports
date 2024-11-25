@@ -34,6 +34,19 @@
         .answers button:hover {
             background-color: #0056b3;
         }
+        .result-link {
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        .result-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .result-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -43,6 +56,9 @@
         <div id="answers" class="answers"></div>
         <button id="next-btn" style="display:none;" onclick="nextQuestion()">다음으로</button>
         <p id="score"></p>
+        <div id="result-link" class="result-link">
+            <a href="https://forms.gle/9mcomgerEXY4VFPR8" target="_blank">결과 보러 가기</a>
+        </div>
     </div>
 
     <script>
@@ -69,6 +85,7 @@
 
         function loadQuiz() {
             document.getElementById("next-btn").style.display = "none";
+            document.getElementById("result-link").style.display = "none";
             const questionElement = document.getElementById("question");
             const answersElement = document.getElementById("answers");
 
@@ -101,14 +118,9 @@
                 document.getElementById("question").innerHTML = "퀴즈 완료!";
                 document.getElementById("answers").innerHTML = "";
                 document.getElementById("score").innerHTML = "최종 점수: " + score + "/" + quizData.length;
-                document.getElementById("next-btn").style.display = "none";
-                const resultLink = document.getElementById("result-link");
-                resultLink.href = "https://forms.gle/9mcomgerEXY4VFPR8";
-                resultLink.style.display = "block";
 
-                const resultLink = document.getElementById("result-link");
-                resultLink.href = "https://forms.gle/9mcomgerEXY4VFPR8"; // 원하는 링크로 변경
-                resultLink.style.display = "block";
+                // 링크 표시
+                document.getElementById("result-link").style.display = "block";
             }
         }
 
@@ -116,3 +128,4 @@
     </script>
 </body>
 </html>
+
