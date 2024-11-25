@@ -102,6 +102,9 @@
                 document.getElementById("answers").innerHTML = "";
                 document.getElementById("score").innerHTML = "최종 점수: " + score + "/" + quizData.length;
                 document.getElementById("next-btn").style.display = "none";
+                const resultLink = document.getElementById("result-link");
+                resultLink.href = "https://forms.gle/9mcomgerEXY4VFPR8";
+                resultLink.style.display = "block";
             }
         }
 
